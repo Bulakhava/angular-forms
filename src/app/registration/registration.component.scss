@@ -1,0 +1,49 @@
+.container{
+  width: 300px;
+  margin:20px auto;
+}
+
+div.form-group{
+  margin-bottom:15px;
+  label, input{
+    display:block;
+    margin-bottom:10px;
+  }
+  input{
+    font-size:13px;
+    width:100%;
+    border:1px solid #BFC3C5;
+    padding:0 7px;
+    border-radius:2px;
+  }
+  label{
+    font-size:13px;
+    position: relative;
+    &:after{
+      position: absolute;
+      content:"*";
+      color: red;
+      font-size:21px;
+      top:1px;
+      margin-left:2px;
+    }
+  }
+
+  input{
+    height: 30px;
+  }
+
+  .error{
+    font-size:13px;
+    color:red;
+  }
+
+}
+
+.registration{
+  width:100%;
+  .btn{
+    float:right;
+  }
+}
+

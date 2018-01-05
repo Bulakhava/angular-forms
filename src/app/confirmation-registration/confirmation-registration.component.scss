@@ -1,0 +1,32 @@
+.container{
+  width: 400px;
+  margin:100px auto;
+}
+
+.greeting{
+  margin-top: 100px;
+}
+.buttons{
+  margin-top: 60px;
+  .btn-cancel{
+    float:left;
+  }
+  .btn-confirm{
+    float:right;
+  }
+}
+
+.message{
+  text-align: center;
+  font-size:27px;
+  background-color: #fff;
+  position:fixed;
+  top:0;
+  right:0;
+  bottom: 0;
+  left:0;
+  display:flex;
+  div{
+    margin:auto;
+  }
+}

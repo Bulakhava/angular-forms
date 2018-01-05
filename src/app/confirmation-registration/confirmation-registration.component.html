@@ -1,0 +1,22 @@
+<div class="container" *ngIf = "confirm && service.user">
+
+  <div class="language-switch">
+    <button (click)="changeLanguage('eng')" [ngClass]="{ 'no-active': service.language == 'ru'}">EN</button>
+    <button (click)="changeLanguage('ru')" [ngClass]="{ 'no-active': service.language == 'eng'}">RU</button>
+  </div>
+  <h1>{{confirm.title[service.language]}}</h1>
+
+  <div class="greeting">
+    {{confirm.greeting[service.language]}} {{service.user.name}}
+  </div>
+
+  <div class="buttons">
+    <a routerLink="/registration" class="btn btn-default btn-cancel">{{confirm.btnCancel[service.language]}}</a>
+    <button class="btn btn-default btn-confirm" (click)="showMessage()">{{confirm.btnConfirm[service.language]}}</button>
+  </div>
+
+</div>
+
+<div class="message" *ngIf="message">
+  <div>Вы успешно зарегистрировались!</div>
+</div>

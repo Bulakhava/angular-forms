@@ -1,0 +1,73 @@
+<div class="container" *ngIf="registr">
+  <div class="language-switch">
+    <button (click)="changeLanguage('eng')" [ngClass]="{ 'no-active': service.language == 'ru'}">EN</button>
+    <button (click)="changeLanguage('ru')" [ngClass]="{ 'no-active': service.language == 'eng'}">RU</button>
+  </div>
+  <h1>{{registr.title[service.language]}}</h1>
+  <form class="registration"
+  [formGroup]="userForm"
+  (submit)="onSubmit()"
+  >
+  <div class="form-group">
+    <label>{{registr.userName[service.language]}}</label>
+    <input type="text" name="name"
+    formControlName="name"
+    [(ngModel)]="user.name"
+    >
+    <div class="error"
+    *ngIf = "userForm.controls.name.invalid && validate"
+    >{{registr.nameError[service.language]}}
+  </div>
+</div>
+
+<div class="form-group">
+  <label>{{registr.userLogin[service.language]}}</label>
+  <input type="text" name="login"
+  formControlName="login"
+  [(ngModel)]="user.login"
+  >
+  <div class="error"
+      *ngIf = "userForm.controls.login.invalid && validate"
+      >{{registr.nameError[service.language]}}
+  </div>
+</div>
+<div class="form-group">
+  <label>{{registr.userEmail[service.language]}}</label>
+  <input type="email" name="email"
+  formControlName="email"
+  [(ngModel)]="user.email"
+  >
+  <div class="error"
+  *ngIf = "userForm.controls.email.invalid && validate"
+  >{{registr.emailError[service.language]}}</div>
+</div>
+
+
+<div class="form-group">
+  <label>{{registr.userPassword[service.language]}}</label>
+  <input type="password" name="password"
+  formControlName="password"
+  [(ngModel)]="user.password"
+  >
+  <div class="error"
+  *ngIf = "userForm.controls.password.invalid && validate"
+  >{{registr.passwordError[service.language]}}</div>
+</div>
+
+<div class="form-group">
+  <label>{{registr.userRepeatPassword[service.language]}}</label>
+  <input type="password" name="repeatPassword"
+  formControlName="repeatPassword"
+  [(ngModel)]="user.repeatPassword"
+  (focus)="hideMessage()"
+  >
+  <div class="error"
+  *ngIf = "!matchPasswords && validate"
+  >{{registr.repeatPasswordError[service.language]}}</div>
+</div>
+
+<button class="btn btn-default" type="submit">{{registr.btn[service.language]}}</button>
+
+
+</form>
+</div>
