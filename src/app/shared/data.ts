@@ -24,8 +24,8 @@ export const registr = {
     eng:'Repeat password'
   },
   nameError:{
-    ru:'Латинские буквы и (или) цифры 2-30 символов',
-    eng:'Latin letters and (or) numbers 2-30 characters'
+    ru:'Буквы и (или) цифры 2-30 символов',
+    eng:'Letters and (or) numbers 2-30 characters'
   },
   emailError:{
     ru:'Введите корректный Email',
